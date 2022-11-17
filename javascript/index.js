@@ -57,14 +57,21 @@ moviesListObj.forEach(film => {
 
 //insert best movie obj in HTML
 // to be coded
-let bestMovieElt = document.getElementById("bestMovie");
-let bestMovieImg = document.createElement("IMG");
-let best7Movies = document.querySelector("#best7Movies > p > span")
-// bestMovieElt.innerHTML = ("Meilleur film " +   + bestMovieObj.description)
-bestMovieElt.textContent = (bestMovieObj.title + bestMovieObj.description)
-bestMovieImg.setAttribute("src",bestMovieObj.image_url)
-bestMovieElt.appendChild(bestMovieImg)
 
+let rightBtn = document.createElement('button')
+let bestMovieSection = document.querySelector("#bestMovie");
+let bestMovieSpanIMG = document.querySelector("#bestMovieIMG")
+let bestMovieSpanDesc = document.querySelector("#bestMovieDesc")
+let bestMovieSpanTitle = document.querySelector("#bestMovieTitle")
+let bestMovieBtn = document.querySelector("#btn")
+let bestMovieImg = document.createElement("IMG");
+bestMovieImg.setAttribute("src",bestMovieObj.image_url)
+bestMovieSpanIMG.appendChild(bestMovieImg)
+bestMovieSpanTitle.textContent = bestMovieObj.title
+bestMovieSpanDesc.textContent = bestMovieObj.description
+bestMovieBtn.textContent = "> Lire maintenant !"
+
+// bestMovieSection.innerHTML = ("Meilleur film " +   + bestMovieObj.description)
 //end best mvoie code
 
 //Fetch 7 best movies
@@ -73,3 +80,6 @@ let promise7bestmovies = await getPromise(IMDBScoreURLPageSize7)
 let sevenBestMoviesURL = getResultsURLFromPromise(promise7bestmovies)
 //get objlist by fetching URLlist
 let sevenBestMoviesObj = await getObjListFromURLList(sevenBestMoviesURL)
+
+
+let best7Movies = document.querySelector("#best7Movies > p > span")
