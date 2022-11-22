@@ -24,7 +24,6 @@
         </nav>
     </h1>
 
-
     <section class='bestMovie'>
         <p class="bestMovieDatas">
             <span id="bestMovieTitle">Movie title</span>
@@ -35,51 +34,62 @@
     </section>
 
 
-<div id="sevenBestMovies">
-    <section class="slider-wrapper">
-        <button class="slide-arrow" id="slide-arrow-prev">
-            &#8249;
+    <div id="sevenBestMovies">
+        <section class="slider-wrapper">
+            <button class="slide-arrow" id="slide-arrow-prev">
+                &#8249;
             </button>
-        <button class="slide-arrow" id="slide-arrow-next">
-            &#8250;
+            <button class="slide-arrow" id="slide-arrow-next">
+                &#8250;
             </button>
-        <ul class="slides-container" id="slides-container">
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
+            <ul class="slides-container" id="slides-container">
             </ul>
-    </section>
-</div>
-
-<div id="sevenBestMoviesCat1">
-    <section class="slider-wrapper">
-        <button class="slide-arrow" id="slide-arrow-prev">
-            &#8249;
+        </section>
+    </div>
+    <div id="sevenBestMoviesCat1">
+        <section class="slider-wrapper">
+            <button class="slide-arrow" id="slide-arrow-prev">
+                &#8249;
             </button>
-        <button class="slide-arrow" id="slide-arrow-next">
-            &#8250;
+            <button class="slide-arrow" id="slide-arrow-next">
+                &#8250;
             </button>
-        <ul class="slides-container" id="slides-container">
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
+            <ul class="slides-container" id="slides-container">
             </ul>
-    </section>
-</div>
+        </section>
+    </div>
     <section>
         Catégorie 2
     </section>
     <section>
         Catégorie 3
     </section>
+
+
+    <button class="open-btn">Fiche du film</button>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p>Titre : <span id="title"></span></p>
+            <p>Genre(s) : <span id="genres"></span></p>
+            <p>Date de sortie: <span id="date_published"></span></p>
+            <p>Note : <span id="rated"></span></p>
+            <p>Score IMDB : <span id="imdb_score"></span></p>
+            <p>Réalisateur(s) : <span id="directors"></span></p>
+            Acteur(s) :
+                <ul id="actors"></ul>
+            <p>Durée : <span id="duration"></span> min</p>
+            <p>Pays d'origine : <span id="countries"></span></p>
+            <p>Résultat au Box Office international :
+                <span id="worldwide_gross_income">
+                </span>
+            </p>
+        </div>
+    </div>
+    
+
 </body>
 
 </html>
+
+
