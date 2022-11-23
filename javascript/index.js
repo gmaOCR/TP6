@@ -2,6 +2,8 @@
 const IMDBScoreURL = 'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score';
 const IMDBScoreURLPageSize8 = 'http://localhost:8000/api/v1/titles/?page_size=8&sort_by=-imdb_score';
 const IMDBScoreURLSciFiPageSize7 = "http://localhost:8000/api/v1/titles/?page_size=7&genre=Sci-Fi&sort_by=-imdb_score"
+const IMDBScoreURLActionPageSize7 = "http://localhost:8000/api/v1/titles/?page_size=7&genre=Action&sort_by=-imdb_score"
+const IMDBScoreURLComedyPageSize7 = "http://localhost:8000/api/v1/titles/?page_size=7&genre=Comedy&sort_by=-imdb_score"
 //Modal container constant
 const modalContainer = document.querySelector(".modal-content")
 const modalSpansNames = ["image_url","title", "genres", "date_published","rated","imdb_score",
@@ -9,19 +11,11 @@ const modalSpansNames = ["image_url","title", "genres", "date_published","rated"
 //Constant for carousel - add here if you want add a new carousel
 const slides7BestMovies = document.querySelector("#sevenBestMovies > section.slider-wrapper > ul.slides-container");
 const slides7BestMoviesCat1 = document.querySelector("#sevenBestMoviesCat1 > section.slider-wrapper > ul.slides-container");
-//Carousel 
+const slides7BestMoviesCat2 = document.querySelector("#sevenBestMoviesCat2 > section.slider-wrapper > ul.slides-container");
+const slides7BestMoviesCat3 = document.querySelector("#sevenBestMoviesCat3 > section.slider-wrapper > ul.slides-container");
+//Carousel const
 const slidesContainer = document.getElementById("slides-container");
-// const prevButton = document.getElementById("slide-arrow-prev");
-// const nextButton = document.getElementById("slide-arrow-next");
-// nextButton.addEventListener("click", () => {
-//     const slideWidth = slide.clientWidth;
-//     slidesContainer.scrollLeft += slideWidth;
-// });
-// prevButton.addEventListener("click", () => {
-//     const slideWidth = slide.clientWidth;
-//     slidesContainer.scrollLeft -= slideWidth;
-// });
-//End carousel
+
 
 // Modal
 let modal = document.querySelector(".modal");
@@ -76,14 +70,28 @@ async function getObjListFromURLList(URLlist) {
     }
     return objList
 }
-// //Create li section for carousel + call fucntion to create and insert IMG
-function createLiforCarousel(moviesListObj, sliderContainerUl){
+
+// Creation complete carousel and carousel content
+function createCarousel(moviesListObj, sliderContainerUl){
     let i = 0
     for (let movie in moviesListObj) { 
         movie = document.createElement("li");
         movie.classList.add("slide"); 
         createElementForSlideContainer(moviesListObj[i], movie)
         sliderContainerUl.appendChild(movie);
+        let wrapper = sliderContainerUl.closest(".slider-wrapper")
+        console.log(wrapper)
+        let nextButton = wrapper.querySelector("section > #slide-arrow-next");
+        console.log(nextButton)
+        let prevButton = wrapper.querySelector("section > #slide-arrow-prev");
+        nextButton.addEventListener("click", () => {
+            const slideWidth = slide.clientWidth;
+            sliderContainerUl.scrollLeft += slideWidth;
+        });
+        prevButton.addEventListener("click", () => {
+            const slideWidth = slide.clientWidth;
+            sliderContainerUl.scrollLeft -= slideWidth;
+        });
         i = i + 1   
     }
     }
@@ -120,7 +128,6 @@ function createElementForSlideContainer(movieObj, liTag) {
     }
 }
 // End functions paragrafer
-
 
 //Start best movie code
 let promiseForBestMovie = await getPromise(IMDBScoreURL);
@@ -171,34 +178,37 @@ let sevenBestMoviesCat1URL = getResultsURLFromPromise(promise7BestMoviesCat1)
 let sevenBestMoviesObjCat1 = await getObjListFromURLList(sevenBestMoviesCat1URL)
 console.log(sevenBestMoviesObjCat1)
 createCarousel(sevenBestMoviesObjCat1,slides7BestMoviesCat1)
+// end category2 8 best movies
 
-// testing
-function createCarousel(moviesListObj, sliderContainerUl){
-    let i = 0
-    for (let movie in moviesListObj) { 
-        movie = document.createElement("li");
-        movie.classList.add("slide"); 
-        createElementForSlideContainer(moviesListObj[i], movie)
-        sliderContainerUl.appendChild(movie);
-        let wrapper = sliderContainerUl.closest(".slider-wrapper")
-        console.log(wrapper)
-        let nextButton = wrapper.querySelector("section > #slide-arrow-next");
-        console.log(nextButton)
-        let prevButton = wrapper.querySelector("section > #slide-arrow-prev");
-        nextButton.addEventListener("click", () => {
-            const slideWidth = slide.clientWidth;
-            sliderContainerUl.scrollLeft += slideWidth;
-        });
-        prevButton.addEventListener("click", () => {
-            const slideWidth = slide.clientWidth;
-            sliderContainerUl.scrollLeft -= slideWidth;
-        });
-        i = i + 1   
-    }
-    }
-// end testing
+// Start category2 8 best movies
+let promise7BestMoviesCat2 = await getPromise(IMDBScoreURLActionPageSize7)
+let sevenBestMoviesCat2URL = getResultsURLFromPromise(promise7BestMoviesCat2)
+let sevenBestMoviesObjCat2 = await getObjListFromURLList(sevenBestMoviesCat2URL)
+console.log(sevenBestMoviesObjCat2)
+createCarousel(sevenBestMoviesObjCat2,slides7BestMoviesCat2)
+// end category2 8 best movies
+
+// Start category3 8 best movies
+let promise7BestMoviesCat3 = await getPromise(IMDBScoreURLComedyPageSize7)
+let sevenBestMoviesCat3URL = getResultsURLFromPromise(promise7BestMoviesCat3)
+let sevenBestMoviesObjCat3 = await getObjListFromURLList(sevenBestMoviesCat3URL)
+console.log(sevenBestMoviesObjCat3)
+createCarousel(sevenBestMoviesObjCat3,slides7BestMoviesCat3)
+// end category3 8 best movies
 
 const slide = document.querySelector(".slide");
+
+// // //Create li section for carousel + call fucntion to create and insert IMG
+// function createLiforCarousel(moviesListObj, sliderContainerUl){
+//     let i = 0
+//     for (let movie in moviesListObj) { 
+//         movie = document.createElement("li");
+//         movie.classList.add("slide"); 
+//         createElementForSlideContainer(moviesListObj[i], movie)
+//         sliderContainerUl.appendChild(movie);
+//         i = i + 1   
+//     }
+//     }
 
 // testing
 // const slide = document.querySelector(".slide");
@@ -273,3 +283,15 @@ const slide = document.querySelector(".slide");
 // }
 // }
 // end testing
+
+// const prevButton = document.getElementById("slide-arrow-prev");
+// const nextButton = document.getElementById("slide-arrow-next");
+// nextButton.addEventListener("click", () => {
+//     const slideWidth = slide.clientWidth;
+//     slidesContainer.scrollLeft += slideWidth;
+// });
+// prevButton.addEventListener("click", () => {
+//     const slideWidth = slide.clientWidth;
+//     slidesContainer.scrollLeft -= slideWidth;
+// });
+//End carousel

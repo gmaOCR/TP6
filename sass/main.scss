@@ -10,7 +10,15 @@
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(207, 220, 135);
+    background-color: #131311f6;
+}
+
+h2{
+    @extend %format;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: rgba(255, 0, 0, 0.488);
 }
 
 .bestMovie {
@@ -19,9 +27,9 @@
     align-items: center;
     width: 800px;
     height: 300px;
-    border: .1em solid rgb(68, 189, 255);
+    border: .1em solid black;
     border-radius: 15px;
-    background-color: blanchedalmond
+    background-color: rgba(255, 235, 205, 0.497)
 }
 
 .bestMovieDatas {
