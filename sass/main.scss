@@ -19,6 +19,21 @@ h2{
     justify-content: center;
     align-content: center;
     color: rgba(255, 0, 0, 0.488);
+    font-size: 20px
+}
+a:link{
+    color: rgba(0, 255, 72, 0.488);
+    text-decoration: none
+}  
+a:hover{
+    color: rgb(154, 230, 92)
+}
+h1{
+    @extend %format;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    font-size: 26px;
 }
 
 .bestMovie {
@@ -218,3 +233,15 @@ h2{
 }
 
 //   End modal
+
+#thumbnail{
+    display: flex;
+    height: 134px;
+    width: 91px;
+    position: absolute;
+    top: 40px; 
+    right: 40px;
+    border: 2px solid rgb(230, 20, 20);
+    border-radius: 3px;
+
+}

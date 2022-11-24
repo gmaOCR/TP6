@@ -6,8 +6,8 @@ const IMDBScoreURLActionPageSize7 = "http://localhost:8000/api/v1/titles/?page_s
 const IMDBScoreURLComedyPageSize7 = "http://localhost:8000/api/v1/titles/?page_size=7&genre=Comedy&sort_by=-imdb_score"
 //Modal container constant
 const modalContainer = document.querySelector(".modal-content")
-const modalSpansNames = ["image_url","title", "genres", "date_published","rated","imdb_score",
-"directors", "actors", "duration", "countries","worldwide_gross_income","description" ]
+// const modalSpansNames = ["image_url","title", "genres", "date_published","rated","imdb_score",
+// "directors", "actors", "duration", "countries","worldwide_gross_income","description" ]
 //Constant for carousel - add here if you want add a new carousel
 const slides7BestMovies = document.querySelector("#sevenBestMovies > section.slider-wrapper > ul.slides-container");
 const slides7BestMoviesCat1 = document.querySelector("#sevenBestMoviesCat1 > section.slider-wrapper > ul.slides-container");
@@ -95,13 +95,10 @@ function createCarousel(moviesListObj, sliderContainerUl){
         i = i + 1   
     }
     }
-
-//Create all elements for modal and event onclick
-function createElementForSlideContainer(movieObj, liTag) {
-    let element = document.createElement("IMG")
-    element.setAttribute("src", movieObj.image_url)
-    liTag.appendChild(element)
-    element.onclick = function () {
+//Create modal content (best movie)
+function createEventOnclickAndModalContent(movieObj,imgElement) {
+    imgElement.onclick = function () {
+    let thumbnail = document.querySelector('#thumbnail')
     let title = document.querySelector('#title')
     let genres = document.querySelector("#genres")
     let published = document.querySelector('#date_published')
@@ -113,6 +110,41 @@ function createElementForSlideContainer(movieObj, liTag) {
     let countries = document.querySelector('#countries')
     let resultat = document.querySelector('#worldwide_gross_income')
     let description = document.querySelector('#description')
+    thumbnail.setAttribute("src", movieObj.image_url)
+    title.textContent = movieObj.title
+    genres.textContent = movieObj.genres
+    published.textContent = movieObj.date_published
+    rated.textContent = movieObj.rated
+    imdb.textContent = movieObj.imdb_score
+    directors.textContent = movieObj.directors
+    actors.textContent = movieObj.actors
+    duration.textContent = movieObj.duration
+    countries.textContent = movieObj.countries
+    resultat.textContent = movieObj.resultat
+    description.textContent = movieObj.description
+    modal.classList.toggle("show-modal")
+    }
+}
+
+//Create all elements for modal and event onclick
+function createElementForSlideContainer(movieObj, liTag) {
+    let element = document.createElement("IMG")
+    element.setAttribute("src", movieObj.image_url)
+    liTag.appendChild(element)
+    element.onclick = function () {
+    let thumbnail = document.querySelector('#thumbnail')
+    let title = document.querySelector('#title')
+    let genres = document.querySelector("#genres")
+    let published = document.querySelector('#date_published')
+    let rated = document.querySelector('#rated')
+    let imdb = document.querySelector('#imdb_score')
+    let directors = document.querySelector('#directors')
+    let actors = document.querySelector('#actors')
+    let duration = document.querySelector('#duration')
+    let countries = document.querySelector('#countries')
+    let resultat = document.querySelector('#worldwide_gross_income')
+    let description = document.querySelector('#description')
+    thumbnail.setAttribute("src", movieObj.image_url)
     title.textContent = movieObj.title
     genres.textContent = movieObj.genres
     published.textContent = movieObj.date_published
@@ -153,6 +185,8 @@ bestMovieSpanIMG.appendChild(bestMovieImg)
 bestMovieSpanTitle.textContent = bestMovieObj.title
 bestMovieSpanDesc.textContent = bestMovieObj.description
 bestMovieBtn.textContent = "Play"
+createEventOnclickAndModalContent(bestMovieObj,bestMovieSpanIMG)
+
 //End best movie code
 
 // Start 8 best movies
