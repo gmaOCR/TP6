@@ -161,6 +161,7 @@ function createElementForSlideContainer(movieObj, liTag) {
 }
 // End functions paragrafer
 
+
 //Start best movie code
 let promiseForBestMovie = await getPromise(IMDBScoreURL);
 let moviesURL = getResultsURLFromPromise(promiseForBestMovie)
@@ -186,8 +187,8 @@ bestMovieSpanTitle.textContent = bestMovieObj.title
 bestMovieSpanDesc.textContent = bestMovieObj.description
 bestMovieBtn.textContent = "Play"
 createEventOnclickAndModalContent(bestMovieObj,bestMovieSpanIMG)
-
 //End best movie code
+
 
 // Start 8 best movies
 //Fetch 8 best movies (so first one include)
@@ -231,101 +232,3 @@ createCarousel(sevenBestMoviesObjCat3,slides7BestMoviesCat3)
 // end category3 8 best movies
 
 const slide = document.querySelector(".slide");
-
-// // //Create li section for carousel + call fucntion to create and insert IMG
-// function createLiforCarousel(moviesListObj, sliderContainerUl){
-//     let i = 0
-//     for (let movie in moviesListObj) { 
-//         movie = document.createElement("li");
-//         movie.classList.add("slide"); 
-//         createElementForSlideContainer(moviesListObj[i], movie)
-//         sliderContainerUl.appendChild(movie);
-//         i = i + 1   
-//     }
-//     }
-
-// testing
-// const slide = document.querySelector(".slide");
-// let test =[]
-// for (let i in modalSpansNames) { 
-//     test.push(("."+ (modalSpansNames[i])))
-// }
-// console.log(test)
-// End testing
-// createSpanForModal(modalContainer,modalSpansNames)
-// get Img URL by list for slides carousel from movie obj
-// function getBestMoviesImgForSlides(moviesObjList) {
-//     let URLimg4Slides = []
-//     for (let movie in moviesObjList) {
-//         URLimg4Slides.push(moviesObjList[movie].image_url)
-//     }
-//     return URLimg4Slides
-// }
-// let URLImgBestMovies = getBestMoviesImgForSlides(sevenBestMoviesObj)
-// create elements by list from URL img list
-// function createIMGElementsWithSrc(URLImgList) {
-//     let imgElementsList = []
-//     for (let img in URLImgList) {
-//         let element = document.createElement("IMG")
-//         element.setAttribute("src", URLImgList[img])
-//         imgElementsList.push(element)
-//     }
-//     return imgElementsList
-// }
-// let imgElementsList = createIMGElementsWithSrc(URLImgBestMovies)
-// for (let i in imgElementsList) {
-//     slides7BestMovies[i].appendChild(imgElementsList[i])
-// }
-// console.log(sevenBestMoviesObj)
-// function createElementsDataByMovieObjForModal(movieObj) {
-//     let element
-//     for (let i in movieObj[i]){       
-//     }
-// }
-// let test = document.querySelector("#sevenBestMovies")
-// console.log(test)
-// console.log(test.querySelector(".modal-content > .first-title"))
-// open-modal(imgElementsList[i], movieObj)
-// Movie constructor
-// class Movie {
-//     constructor(image_url, title, genres, date_published, rated, 
-//         imdb_score, directors, actors, duration, countries, worldwide_gross_income,
-//         description) {
-//             this.image_url = image_url
-//             this.title = title
-//             this.genres = genres
-//             this.date_published = date_published
-//             this.rated = rated
-//             this.imdb_score = imdb_score
-//             this.directors = directors
-//             this.actors = actors
-//             this.duration = duration
-//             this.countries = countries
-//             this.worldwide_gross_income = worldwide_gross_income
-//             this.description = description
-//         }
-//         createElementsFromMovieListParameter(movieObj) {     
-//         }
-// }
-// //Create span section for modal
-// function createSpanForModal(modalContainer, modalSpansNames){
-//     let temp
-//     for (let text in modalSpansNames) {
-//         temp = document.createElement("span")
-//         temp.classList.add(modalSpansNames[text])
-//         modalContainer.appendChild(temp)
-// }
-// }
-// end testing
-
-// const prevButton = document.getElementById("slide-arrow-prev");
-// const nextButton = document.getElementById("slide-arrow-next");
-// nextButton.addEventListener("click", () => {
-//     const slideWidth = slide.clientWidth;
-//     slidesContainer.scrollLeft += slideWidth;
-// });
-// prevButton.addEventListener("click", () => {
-//     const slideWidth = slide.clientWidth;
-//     slidesContainer.scrollLeft -= slideWidth;
-// });
-//End carousel

@@ -94,11 +94,7 @@ h1{
     border: solid greey 1px;
     border-radius: 8px;
     background-color: black;
-    // align-items: center;
     justify-content: center;
-    // justify-items: center;
-    // justify-items: auto;
-    // align-items: center;
     margin: 1rem;
     position: relative;
     overflow: hidden;
@@ -107,30 +103,22 @@ h1{
 }
 
 .slides-container {
-    // height: calc(100vh - 2rem);
     height: 100%;
     width: 728px;
-    // width: 960px;
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
     overflow: scroll;
     scroll-behavior: smooth;
-    // align-content: space-between;
-    // justify-items: auto;
-    // justify-content: space-evenly;
+
 }
 
 .slide {
     display: flex;
     flex-direction: column-reverse;
-    // justify-content: center;
-    // width: 100%;
-    // height: 100%;
     height: 268px;
     width: 182px;
-    // flex: 1 0 100%;
 }
 
 // Scrollbar option
