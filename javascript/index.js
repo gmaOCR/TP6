@@ -6,9 +6,7 @@ const IMDBScoreURLActionPageSize7 = "http://localhost:8000/api/v1/titles/?page_s
 const IMDBScoreURLComedyPageSize7 = "http://localhost:8000/api/v1/titles/?page_size=7&genre=Comedy&sort_by=-imdb_score"
 //Modal container constant
 const modalContainer = document.querySelector(".modal-content")
-// const modalSpansNames = ["image_url","title", "genres", "date_published","rated","imdb_score",
-// "directors", "actors", "duration", "countries","worldwide_gross_income","description" ]
-//Constant for carousel - add here if you want add a new carousel
+//Constant for carousel
 const slides7BestMovies = document.querySelector("#sevenBestMovies > section.slider-wrapper > ul.slides-container");
 const slides7BestMoviesCat1 = document.querySelector("#sevenBestMoviesCat1 > section.slider-wrapper > ul.slides-container");
 const slides7BestMoviesCat2 = document.querySelector("#sevenBestMoviesCat2 > section.slider-wrapper > ul.slides-container");
