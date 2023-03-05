@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
-    <script type="module" src="javascript/index.js" defer></script>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="./Styles/style.css" />
+    <script type="module" src="javascript/index.js"></script>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./Styles/style.css">
     <style>
         @font-face {
             font-family: "Title";
@@ -15,76 +15,75 @@
 </head>
 
 <body class="body">
-    <h1 id="nav">
-        <p><a href="#nav"">Accueil</a></p>
+    <div class="nav-section">
+        <p><a href="#nav">Accueil</a></p>
         <p><a href="#bestMovieSection">Meilleurs films</a></p>
         <p><a href="#sevenBestMoviesCat1">Sci-Fi</a></p>
         <p><a href="#sevenBestMoviesCat2">Action</a></p>
         <p><a href="#sevenBestMoviesCat3">Comédie</a></p>
-    </h1>
-
-    <section class='bestMovie' id="bestMovieSection">
+    </div>
+    <div class='bestMovie' id="bestMovieSection">
         <p class="bestMovieDatas">
             <span id="bestMovieTitle">Movie title</span>
             <span id="btn">Btn</span>
             <span id="bestMovieDesc">Description</span>
         </p>
         <span id="bestMovieIMG"></span>
-    </section>
+    </div>
     <div id="sevenBestMovies">
         <h2>Les 7 meilleurs films du moment: </h2>
-        <section class="slider-wrapper">
-            <button class="slide-arrow" id="slide-arrow-prev">
+        <div class="slider-wrapper">
+            <button class="slide-arrow slide-arrow-prev">
                 &#8249;
             </button>
-            <button class="slide-arrow" id="slide-arrow-next">
+            <button class="slide-arrow slide-arrow-next">
                 &#8250;
             </button>
-            <ul class="slides-container" id="slides-container">
+            <ul class="slides-container">
             </ul>
-        </section>
+        </div>
     </div>
     <div id="sevenBestMoviesCat1">
         <h2>Les 7 meilleurs "Sci-Fi": </h2>
-        <section class="slider-wrapper">
-            <button class="slide-arrow" id="slide-arrow-prev">
+        <div class="slider-wrapper">
+            <button class="slide-arrow slide-arrow-prev">
                 &#8249;
             </button>
-            <button class="slide-arrow" id="slide-arrow-next">
+            <button class="slide-arrow slide-arrow-next">
                 &#8250;
             </button>
-            <ul class="slides-container" id="slides-container">
+            <ul class="slides-container">
             </ul>
-        </section>
+        </div>
     </div>
     <section>
         <div id="sevenBestMoviesCat2">
             <h2>Les 7 meilleurs "Action": </h2>
-            <section class="slider-wrapper">
-                <button class="slide-arrow" id="slide-arrow-prev">
+            <div class="slider-wrapper">
+                <button class="slide-arrow slide-arrow-prev">
                     &#8249;
                 </button>
-                <button class="slide-arrow" id="slide-arrow-next">
+                <button class="slide-arrow slide-arrow-next">
                     &#8250;
                 </button>
-                <ul class="slides-container" id="slides-container">
+                <ul class="slides-container">
                 </ul>
-            </section>
+            </div>
         </div>
     </section>
     <section>
         <div id="sevenBestMoviesCat3">
             <h2>Les 7 meilleurs "Comédie": </h2>
-            <section class="slider-wrapper">
-                <button class="slide-arrow" id="slide-arrow-prev">
+            <div class="slider-wrapper">
+                <button class="slide-arrow slide-arrow-prev">
                     &#8249;
                 </button>
-                <button class="slide-arrow" id="slide-arrow-next">
+                <button class="slide-arrow slide-arrow-next">
                     &#8250;
                 </button>
-                <ul class="slides-container" id="slides-container">
+                <ul class="slides-container">
                 </ul>
-            </section>
+            </div>
         </div>
     </section>
 
@@ -107,7 +106,7 @@
                 <span id="worldwide_gross_income"></span>
             </p>
             <p>Résumé : <span id="description"></span></p>
-            <img id="thumbnail">
+            <img id="thumbnail" alt="Miniature">
         </div>
     </div>
 

@@ -7,12 +7,14 @@ const IMDBScoreURLComedyPageSize7 = "http://localhost:8000/api/v1/titles/?page_s
 //Modal container constant
 const modalContainer = document.querySelector(".modal-content")
 //Constant for carousel
-const slides7BestMovies = document.querySelector("#sevenBestMovies > section.slider-wrapper > ul.slides-container");
-const slides7BestMoviesCat1 = document.querySelector("#sevenBestMoviesCat1 > section.slider-wrapper > ul.slides-container");
-const slides7BestMoviesCat2 = document.querySelector("#sevenBestMoviesCat2 > section.slider-wrapper > ul.slides-container");
-const slides7BestMoviesCat3 = document.querySelector("#sevenBestMoviesCat3 > section.slider-wrapper > ul.slides-container");
+const slides7BestMovies = document.querySelector("#sevenBestMovies > div.slider-wrapper > ul.slides-container");
+const slides7BestMoviesCat1 = document.querySelector("#sevenBestMoviesCat1 > div.slider-wrapper > ul.slides-container");
+const slides7BestMoviesCat2 = document.querySelector("#sevenBestMoviesCat2 > div.slider-wrapper > ul.slides-container");
+const slides7BestMoviesCat3 = document.querySelector("#sevenBestMoviesCat3 > div.slider-wrapper > ul.slides-container");
 //Carousel const
-const slidesContainer = document.getElementById("slides-container");
+//const slidesContainer = document.getElementById("slides-container");
+const slidesContainer = document.getElementsByClassName("slides-container");
+
 
 
 // Modal
@@ -79,9 +81,9 @@ function createCarousel(moviesListObj, sliderContainerUl){
         sliderContainerUl.appendChild(movie);
         let wrapper = sliderContainerUl.closest(".slider-wrapper")
         console.log(wrapper)
-        let nextButton = wrapper.querySelector("section > #slide-arrow-next");
+        let nextButton = wrapper.querySelector("div > .slide-arrow-next");
         console.log(nextButton)
-        let prevButton = wrapper.querySelector("section > #slide-arrow-prev");
+        let prevButton = wrapper.querySelector("div > .slide-arrow-prev");
         nextButton.addEventListener("click", () => {
             const slideWidth = slide.clientWidth;
             sliderContainerUl.scrollLeft += slideWidth;

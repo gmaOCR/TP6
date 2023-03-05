@@ -29,8 +29,9 @@ a:link{
 a:hover{
     color: rgb(154, 230, 92)
 }
-h1{
+.nav-section{
     @extend %format;
+    flex-direction: row;
     display: flex;
     justify-content: space-around;
     width: 80%;
@@ -158,14 +159,14 @@ h1{
     opacity: 1;
 }
 
-#slide-arrow-prev {
+.slide-arrow-prev {
     transform: scale(.7);
     left: 0;
     padding-left: 0.25rem;
     border-radius: 0 2rem 2rem 0;
 }
 
-#slide-arrow-next {
+.slide-arrow-next {
     transform: scale(.7);
     right: 0;
     padding-left: 0.75rem;
